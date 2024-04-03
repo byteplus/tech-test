@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Http\Services\XblLookupService;
-use App\Http\Services\LookupCacheService;
-use App\Http\Services\SteamLookupService;
+use App\Services\XblLookupService;
+use App\Services\LookupCacheService;
+use App\Services\SteamLookupService;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Services\MinecraftLookupService;
+use App\Services\MinecraftLookupService;
 
 class LookupController extends Controller
 {

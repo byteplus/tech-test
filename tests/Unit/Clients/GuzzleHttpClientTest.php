@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Http\Clients;
+namespace Tests\Unit\Clients;
 
 use Tests\TestCase;
-use App\Http\Clients\GuzzleHttpClient;
+use App\Clients\GuzzleHttpClient;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Psr7\Response;
 

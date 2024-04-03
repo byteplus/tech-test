@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use Illuminate\Support\Facades\Log;
-use App\Http\Clients\ClientInterface;
+use App\Clients\ClientInterface;
 
 class SteamLookupService
 {

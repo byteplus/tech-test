@@ -4,10 +4,10 @@ namespace Tests\Unit\Http\Controller;
 
 use Tests\TestCase;
 use Illuminate\Http\Request;
-use App\Http\Services\XblLookupService;
-use App\Http\Services\SteamLookupService;
+use App\Services\XblLookupService;
+use App\Services\SteamLookupService;
+use App\Services\MinecraftLookupService;
 use App\Http\Controllers\LookupController;
-use App\Http\Services\MinecraftLookupService;
 
 class LookupControllerTest extends TestCase
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use Illuminate\Support\Facades\Log;
-use App\Http\Clients\ClientInterface;
+use App\Clients\ClientInterface;
 
-class XblLookupService
+class MinecraftLookupService
 {
     protected $httpClient;
 
@@ -18,13 +18,11 @@ class XblLookupService
     {
         if ($username) {
             // Username lookup
-            $params = "{$username}?type=username";
+            $url = "https://api.mojang.com/users/profiles/minecraft/{$username}";
         } else {
             // ID lookup
-            $params = $id;
+            $url = "https://sessionserver.mojang.com/session/minecraft/profile/{$id}";
         }
-
-        $url = "https://ident.tebex.io/usernameservices/3/username/" . $params;
 
         try {
             $responseData = $this->httpClient->get($url);
@@ -32,12 +30,12 @@ class XblLookupService
             if (! empty($responseData)) {
                 return [
                     'id' => $responseData->id,
-                    'username' => $responseData->username,
-                    'avatar' => $responseData->meta->avatar,
+                    'username' => $responseData->name,
+                    'avatar' => "https://crafatar.com/avatars/" . $responseData->id,
                 ];
             } else {
                 return [
-                    'error' => 'Failed to retrieve user data'
+                    'error' => 'Failed to retrieve user data',
                 ];
             }
         } catch (\Exception $e) {
