@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Http\Clients\ClientInterface;
-use App\Http\Clients\GuzzleHttpClient;
+use App\Clients\ClientInterface;
+use App\Clients\GuzzleHttpClient;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

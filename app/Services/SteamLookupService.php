@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Log;
 use App\Clients\ClientInterface;
+use Illuminate\Support\Facades\Log;
 
 class SteamLookupService
 {
